@@ -1,25 +1,23 @@
-import logo from './logo.svg';
+import React ,{createContext} from 'react'
 import './App.css';
+import CompA from './CompA'
+
+const firstName = createContext()
+const lastName = createContext()
 
 function App() {
   return (
+    <firstName.Provider value={"FN Dipesh"}>
+      <lastName.Provider value={"LN Sakharkar"}>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Welcome to context API</h1>
+      <CompA/>
+
     </div>
+    </lastName.Provider>
+    </firstName.Provider>
   );
 }
 
 export default App;
+export {firstName,lastName};
